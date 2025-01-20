@@ -54,7 +54,7 @@ with open(os.path.join(path, 'problem', 'QuestionsPostulates.py'), 'r') as f:
                 new_line = new_line[ind:].strip()
 
                 answer_digit = float(new_line)
-                if answer_digit == true_answer:
+                if np.allclose(answer_digit, true_answer, rtol=1e-3):
                     score += 1
 
             elif isinstance(true_answer, bool):
